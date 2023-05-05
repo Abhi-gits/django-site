@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Django-Site</title>
+        <title>Django-Site-Login</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
@@ -27,27 +27,32 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
                     </ul>
                 </div>
                 </div>
             </nav>
+            {% startblock %}
+                        
+            {% endblock %}
+
           </div>
           <div class=container-fluid px-3>
             <div class="row min-vh-100">
                 <div class="col-md-8 col-lg-6 col-xl-5 d-flex align-items-center">
                   <div class="w-100 py-5 px-md-5 px-xl-6 position-relative">
+                    <h1> JALA ACADEMY </h1>
                    
                     <div class="form-validate">
                       <div class="form-group">
@@ -80,16 +85,16 @@
               </div>
         </div>
 
-        {% comment %} <div class="container">
+        <div class="container">
             
-            <div>
+        <div>
 
-            </div>
+          </div>
             <div class="jumbotron">
                 <h1>my name is abhishek</h1>                
                 
             </div>
-        </div> {% endcomment %}
+        </div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
