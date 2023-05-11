@@ -21,7 +21,7 @@
         <div>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Jala Academy</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,10 +40,24 @@
                             <a class="nav-link disabled">Disabled</a>
                         </li>
                     </ul>
+                    <ul >
+                      {% if request.user.is_authenticated %}
+
+                      <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+                        <a class="btn btn-danger" href="#">Logout</a>        <!--{% url 'logout_view' %} -->
+                      </li>
+
+                      {% else %} 
+                      
+                      <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+                        <a class="btn btn-info" href="{%url 'login_view' %}">Login</a>
+                      </li>
+                      {% endif %}
+                    </ul>
                 </div>
                 </div>
             </nav>
-            {% startblock %}
+            {% block start %}
                         
             {% endblock %}
 
@@ -68,14 +82,11 @@
                         <input class="form-control" name="loginPassword" id="loginPassword" placeholder="Password" type="password" required data-msg="Please enter your password">
                       </div>
                       <!-- Submit-->
-                      <button class="btn btn-lg btn-block btn-primary" onclick = "login()">Sign in</button>
+                      <button class="btn btn-lg btn-block btn-primary" >
+                        <a class="btn btn-info" href="{%url 'login_view' %}">Login</a>
+                      </button>
                       <p class="text-center"><small class="text-muted text-center">Don't have an account yet? <a href="#">Sign Up</a></small></p>
                     </div>
-                    {% comment %} <a class="close-absolute mr-md-5 mr-xl-6 pt-5" href="index-2.html"> 
-                      <svg class="svg-icon w-3rem h-3rem">
-                        <use xlink:href="#close-1"> </use>
-                      </svg>
-                    </a> {% endcomment %}
                   </div>
                 </div>
                 <div class="col-md-4 col-lg-6 col-xl-7 d-none d-md-block">
@@ -85,16 +96,7 @@
               </div>
         </div>
 
-        <div class="container">
-            
-        <div>
-
-          </div>
-            <div class="jumbotron">
-                <h1>my name is abhishek</h1>                
-                
-            </div>
-        </div>
+       
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
