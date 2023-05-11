@@ -40,20 +40,20 @@
                             <a class="nav-link disabled">Disabled</a>
                         </li>
                     </ul>
-                    <ul >
+                    <!-- <ul >
                       {% if request.user.is_authenticated %}
 
                       <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
-                        <a class="btn btn-danger" href="#">Logout</a>        <!--{% url 'logout_view' %} -->
+                        <a class="btn btn-danger" href="#">Logout</a>       
                       </li>
 
                       {% else %} 
                       
                       <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
-                        <a class="btn btn-info" href="{%url 'login_view' %}">Login</a>
+                        <a class="btn btn-info" href="#">Login</a>
                       </li>
                       {% endif %}
-                    </ul>
+                    </ul> -->
                 </div>
                 </div>
             </nav>
@@ -83,7 +83,7 @@
                       </div>
                       <!-- Submit-->
                       <button class="btn btn-lg btn-block btn-primary" >
-                        <a class="btn btn-info" href="{%url 'login_view' %}">Login</a>
+                        <a class="btn btn-info" href="{%url '' %}">Login</a>
                       </button>
                       <p class="text-center"><small class="text-muted text-center">Don't have an account yet? <a href="#">Sign Up</a></small></p>
                     </div>
