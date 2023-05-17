@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from requests import request
 from django.contrib.auth import logout
+from logging import exception
 
 from .models import *
 from .forms import *
@@ -9,7 +10,8 @@ from .forms import *
 
 
 def home(request):
-    return render(request, 'djangosite/main.html')
+    context = {'blogs' : EmployeeForm.object.all()}
+    return render(request, 'djangosite/main.html', context)
 
 def login_view(request):
     return render(request, 'djangosite/dassboard.html')
