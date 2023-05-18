@@ -10,8 +10,8 @@ from .forms import *
 
 
 def home(request):
-    context = {'blogs' : EmployeeForm.object.all()}
-    return render(request, 'djangosite/main.html', context)
+    #context = {'blogs' : emp.all()}
+    return render(request, 'djangosite/main.html')
 
 def login_view(request):
     return render(request, 'djangosite/dassboard.html')
@@ -66,7 +66,7 @@ def emp_update(request, slug):
             if form.is_valid():
                 content = form.cleaned_data['content']
                 
-            emp_obj = EmployeeForm.objects.create(
+            emp_obj = emp.object.create(
                 user = user , name = name, 
                 content = content
             )
