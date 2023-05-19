@@ -1,7 +1,10 @@
 from django.shortcuts import render,redirect
 from requests import request
 from django.contrib.auth import logout
+from django.views.generic.list import ListView
 from logging import exception
+from django.contrib.postgres.search import SearchQuery, SearchVector
+
 
 from .models import *
 from .forms import *
@@ -14,7 +17,7 @@ def home(request):
     return render(request, 'djangosite/main.html')
 
 def login_view(request):
-    return render(request, 'djangosite/dassboard.html')
+    return render(request, 'djangosite/dashboard.html')
 
 def logout_view(request):
     logout(request)
@@ -76,9 +79,7 @@ def emp_update(request, slug):
     except Exception  as e:
         print(e)
         
-def search_emp(request):
-    pass    
-        
+
         
 
 def verify(request, token):
@@ -92,3 +93,25 @@ def verify(request, token):
     
     except Exception as e:
         print(e)
+        
+        
+        
+        
+def search(request):
+    query = request.GET.get('q')
+    if query:
+        # Create a SearchQuery object from the user's search query.
+        search_query = SearchQuery(query)
+
+        # Use the SearchVector object to search the database for matching records.
+        results = Post.objects.annotate(
+            search_vector=SearchVector('name', 'emp_id')
+        ).filter(search_vector=search_query)
+
+        return render(request, 'djangosite/search.html', {'results': results})
+    else:
+        return render(request, 'djangosite/search.html', {})
+        
+        
+        
+

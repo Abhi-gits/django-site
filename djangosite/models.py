@@ -27,3 +27,12 @@ class emp(models.Model):
     def save(self, *args, **kwargs):
         self.slug = generate_slug(self.name)
         super(emp, self).save(*args, **kwargs)
+        
+        
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    
+    def __str__(self):
+        return self.name
+    
