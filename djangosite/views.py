@@ -24,7 +24,7 @@ def logout_view(request):
     return redirect('/')
 
 def signup(request):
-    return render(request, 'djangosite/main.html')
+    return render(request, 'djangosite/signup.html')
 
 def add_emp(request):
     employee = emp.objects.all()

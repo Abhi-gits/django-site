@@ -21,10 +21,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Add Employee</a>
+                        <a class="nav-link" href="{% url 'add_emp' %}">Add Employee</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout_view' %}">Search</a>
+                        <a class="nav-link" href="{% url 'search' %}">Search</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled">Disabled</a>
@@ -46,6 +46,8 @@
     <div>
         <div class="text-muted text-center">
             <h1 >DASHBOARD</h1>
+            <br><br>
+            <p>Welcome to Jala Academy.</p>
         </div>
     </div>
     
